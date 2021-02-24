@@ -34,3 +34,7 @@ options
 for beginners
 create models by plugging together building blocks
 
+### misc
+
+increasing pip3 timeout 
+pip3 install -U --timeout 10000 tensorflow # increases timeout time to 10 seconds
