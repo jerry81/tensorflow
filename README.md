@@ -41,6 +41,35 @@ dense neural network - fully connected by neurons in network layer each neuron r
 
 Yann Lecun - deep learning and machine learning expert
 
+pb file - protobuf file - used in tensorflow - contains graph definition and weights of model - aka protocol buffers - like binary encoded json file
+a way to serialized structured data 
+language neutral
+compiler provided with library to build objects in pb format
+
+deep convolutional neural network - useful in image recognition
+aka CNN aka ConvNet
+an algorithm on which deep learning and computer vision have been built on
+takes as input image, assigns weights and biases (aka importance) to objects/aspects in image, differentiate the identified objects, 
+lower preprocessing requirement
+inspired to connectivity of neurons in human brain esp. that in visual cortex
+question: why not flatten the 3x3 matrix to 9x1 and feed to perceptron - for basic images, average precision score, low accuracy for complex images
+convnet captures spatial and temporal dependencies by applying filters
+convolved feature is a smaller matrix processed from larger image matrix
+goal of convolution operation: extract high-level features (edges) from image
+mimics the human brain recognizing wholesome high-level understanding of images
+further reduce or expand the size of convolved feature by applying valid padding or same padding
+pooling layer - reduces size of CF for performance
+  max pooling - max value from portion of image - acts as noise supressant
+  avg pooling - average of all values from portion of image
+
+
+stride length - how much to move on the image when calculating next cell of convolved feature
+
+perceptron - simple model of biological neuron in artificial neural network - 
+also - name of early algorithm for binary classifiers
+
+
+
 ### install
 
 options
@@ -102,10 +131,11 @@ function modified to
 input * weight + bias
 still a linear function 
 how to automate training algorithm, tweaking weight and bias until error is minimized?
-gradient descent - algorithm that steps to correct weight and biaas 
+gradient descent - algorithm that steps to correct weight and bias 
 
 #### next step 
 
+neural network may do regression - calculate and output continuous value (float)
 extending the house example
 add another variable, # of bathrooms (x2)
 new model with two weights and a bias
@@ -115,6 +145,14 @@ could be an enum like Good/Bad
 boolean like true/false
 this is called classification type problems
 discrete set of values for y 
+model gives % chance that an input is of a value in the set of values 
+softmax - calculates probability of each "class" (enum value)
+  may take array of n items outputs same # of items
+  the outputs add up to 1
+  is not necessarily input/total of inputs
+  output is actually exaggerated probability
+adding classes (y) increases number of biases and weights
+adding features (x) increases number of weights only
 
 ### supercharging android apps with tensorflow article
 
@@ -132,8 +170,8 @@ discrete set of values for y
     d.  bitmap files transformed into input tensors
     e.  tensors consist of 3-dimentional arrays that supplies rgb values of every pixel in image (x-index, y-index, 0 (r), 1 (g), 2 (b)) while value of this cell is RGB value 
     f.  model file downloaded to assets directory
-    
+    g.  54Mb pb file
+    h.  txt file containing 1000 classifications (label strings)
 7.  core built with C++
 8.  TF software can be written in c++ or python
 9.  c++ code is accessed thru Android NDK with JNI calls, methods declared with native keywords
-10.  
