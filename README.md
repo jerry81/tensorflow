@@ -175,3 +175,12 @@ adding features (x) increases number of weights only
 7.  core built with C++
 8.  TF software can be written in c++ or python
 9.  c++ code is accessed thru Android NDK with JNI calls, methods declared with native keywords
+
+### neural network zoo
+
+[Neural network zoo](https://www.asimovinstitute.org/neural-network-zoo/)
+
+<img src="https://www.asimovinstitute.org/wp-content/uploads/2019/04/NeuralNetworkZo19High.png"/>
+
+attempts to keep track of neural net architectures 
+
