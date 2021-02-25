@@ -62,13 +62,52 @@ pooling layer - reduces size of CF for performance
   max pooling - max value from portion of image - acts as noise supressant
   avg pooling - average of all values from portion of image
 
-
 stride length - how much to move on the image when calculating next cell of convolved feature
 
 perceptron - simple model of biological neuron in artificial neural network - 
 also - name of early algorithm for binary classifiers
 
+supervised/unsupervised learning
+  supervised - inputs and outputs given
+  unsupervised - only inputs given
 
+MSE - mean squared error - the squared difference between expected and predicted
+compare with linear difference
+
+backfed input cell - feedback deliberately introduced
+
+noisy input cell - chaotic, thermal, quantum noise introduced
+
+hidden cell - attenuates (applies weight to) input from activation function outputs in prior layer 
+
+probablistic HC - applies radial basis function to diff between test case and cell's mean 
+
+spiking HC - employs spiking model of activation vs perceptron model - more accurate simulation of bio neurons
+
+match input output cell - uses "auto-encoders" to converge on identify function from network input to output
+
+recurrent cell - applies historical signal state to improve convergence where time domain is important dimension of learning
+example of time domain sensitive - video, audio
+applied in RNN
+
+memory cell - applies historic signal state to improve convergence with a time domain
+applied in LTSM
+
+different MC - applies historical signal state
+applied in GRU
+
+convolution cell - passes result of convolution kernel applied to previous layer's output
+
+pool cell - agregates results of cell sin convolution layer 
+
+kernel - filter that extracts features from image
+also most basic level or core of OS
+
+stochiastic network - random
+
+contrastive divergence - running markov chain on sample, starting with last example processed
+
+gradient - slope prepresenting rel between weights and error
 
 ### install
 
@@ -184,3 +223,84 @@ adding features (x) increases number of weights only
 
 attempts to keep track of neural net architectures 
 
+FF, FFNN, P - feed forward neural networks, perceptrons 
+  straightforward - feed info from front to back
+  layer has either input, hidden, or output cells.
+  layer does not have connection
+  two layers fully connected 
+  simplest: two input cells and one output cell (logic gate)
+  trained with back-propagation - (given paired dataset of input and expected output) - error is back-propagated
+  problem: loses information in depth
+
+RBF - radial basis function - FFNN with radial basis functions
+  assigns real value to each input from domain - output is always an absolute value.  
+
+RNN - recurrent NN - FNN with time twist and states
+  a neuron may feed itself
+  info of past stored in weights
+  problem: vanishing/exploding gradient - information rapidly lost ovver time
+  good for autocompletion
+
+LTSM - combats vansihing/exploding gradient issue
+  introduces gates and memory cells
+  three gates: input/output/forget - gates may stop or allow flow of informaation - forget gate may forget some historical data
+  inspired by circuitry 
+  not as much biology
+  good for processing books or composing music
+
+GRU - gated recurrent units 
+  one less gaate than LSTM.  has update gate - termines how much info to keep from last state and how much to let in from previous layer
+  has reset gate - like forget gate
+  faster than LTSM
+
+BiRNN/LTSM/GRU - connected to both past and future
+
+AE - autoencoder - similar to FFNN
+  encode info (compress) automatically 
+  hidden layers smaller than input and output layers
+  input - encode - attenuate - decode - output
+
+VAE - variational AE - taught approximated probability distribution of input
+  uses Probabilistic HC instead of normal HC
+
+DAE - denoising AE - feed input data with noise (like grainy image)
+  encourages network to learn with broader features
+
+SAE - sparse AE - opposite of AE - 
+  encodes info to more space
+  attempts to create match input output cells
+  filters out errors above a certain threshold for further training
+  resembles spiking
+
+MC - Markov Chain
+  predecessor to BM and HN 
+  memory-less
+  from any node, what are odds of going to any neighboring node?
+  looks like a symmetrical web, every probablistic HN connected to every other.
+  
+HN - hopfield network - every neuron connected to every other 
+  every node functions as everything - input (before training), hidden during training, output afterwards
+  will reduce and converge into a stable conventional nn (but not always)
+  entropy or temperature gradually reduced
+  updating nodes done synchronously or one by one
+  stable when all cells update and none change 
+
+BM - boltzmann machine - similar to HN
+  but not all cells start as input, some marked hidden
+  begin with random weights, learns thru back propagation and in modern times, contrastive divergence ( using markov chain to determine gradients )
+  stabalizes when global temperature reaches equillibrium
+
+RBM - restricted BM
+  more usable than BM - not every neuron is connected to every other.  only connects different group of neurons to every other group 
+
+DBN - deep belief network - aka greedy training - uses locally optimal solutions to approximate answers
+  input then large web of hidden nodes then output
+  stacked architecture - trainable stack by stack vs. just the previous network
+  
+D/CNN - deep convolutional NN - used for image processing 
+  input then network of converging convolutions, followed by pool cells, then large network of hidden nodes then outputs
+  FFNN glued to end to further process data.
+
+DN - deconvolutional network - opposite of DCNN
+
+DCIGN - deep convolutional inverse graphics network - 
