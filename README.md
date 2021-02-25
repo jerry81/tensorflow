@@ -115,3 +115,25 @@ could be an enum like Good/Bad
 boolean like true/false
 this is called classification type problems
 discrete set of values for y 
+
+### supercharging android apps with tensorflow article
+
+[taken from here](https://jalammar.github.io/Supercharging-android-apps-using-tensorflow/)
+
+1.  tensorflow opensourced in 11/2015
+2.  goog dominant force in ML
+3.  ML played big part in search 
+4.  TF originally designed for internal use 
+5.  can run on mobile 
+6.  TF repo on github has android directory
+    a.  android demo app goes thru camera and tries to identify objects 
+    b.  displays an array of strings describing object and the probability score next to it
+    c.  to run, create apk, install camera2 package, adb install
+    d.  bitmap files transformed into input tensors
+    e.  tensors consist of 3-dimentional arrays that supplies rgb values of every pixel in image (x-index, y-index, 0 (r), 1 (g), 2 (b)) while value of this cell is RGB value 
+    f.  model file downloaded to assets directory
+    
+7.  core built with C++
+8.  TF software can be written in c++ or python
+9.  c++ code is accessed thru Android NDK with JNI calls, methods declared with native keywords
+10.  
