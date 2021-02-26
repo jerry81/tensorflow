@@ -109,6 +109,12 @@ contrastive divergence - running markov chain on sample, starting with last exam
 
 gradient - slope prepresenting rel between weights and error
 
+numpy - package for scientific computing with python
+numpy() - converts tensor obj to numpy.ndarray object
+numpy.ndarray - array object
+
+logit - output of model, before being converted to probabilities with a softmax
+
 ### install
 
 options
