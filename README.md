@@ -301,6 +301,9 @@ D/CNN - deep convolutional NN - used for image processing
   input then network of converging convolutions, followed by pool cells, then large network of hidden nodes then outputs
   FFNN glued to end to further process data.
 
-DN - deconvolutional network - opposite of DCNN
+DN - deconvolutional network - opposite of DCNN aka IGN - inverse graphics network - 
+  produces graphical images based on text input.
 
 DCIGN - deep convolutional inverse graphics network - 
+  like VAE but CNN and DNN for encoder aand decoders
+  trained with back propagation
