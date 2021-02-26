@@ -307,3 +307,8 @@ DN - deconvolutional network - opposite of DCNN aka IGN - inverse graphics netwo
 DCIGN - deep convolutional inverse graphics network - 
   like VAE but CNN and DNN for encoder aand decoders
   trained with back propagation
+
+  ### TF beginner tutorial
+  1.  in order to download mnist.npz, had to install python certificaates
+    a.  go to Applications/Python
+    b.  double click install certificates command
