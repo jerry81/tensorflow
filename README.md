@@ -318,3 +318,32 @@ DCIGN - deep convolutional inverse graphics network -
   1.  in order to download mnist.npz, had to install python certificaates
     a.  go to Applications/Python
     b.  double click install certificates command
+
+### tf "learn ml"
+
+TF make building neural networks for ML easy 
+Uses API called Keras - creaged by Francois Chollet
+Deep learning with python first step
+
+### datasets
+
+MNIST - first dataset researchers try.  if it doesn't work on MNIST, it won't work on others.
+issues: 
+  MNIST too easy 
+  overused
+  cannot represent modern CV tasks
+
+Fashion MNIST - replacement for MNIST - 9 classes x 3 rows per class 
+### ML Basics with Keras tutoriaal 
+
+train_images and train_labels - training set - data model uses to learn 
+test_images, test_labels - test set 
+train_images, test_images - 28x28 numpy arrays - pixel values 0 to 255 
+x_labels - array of intergers ranging from 0 to 9. corresponds to 9 classes of clothing
+0 - t-shirt
+1 - trouser 
+etc...
+9 - ankle boot
+
+
+
