@@ -345,5 +345,18 @@ x_labels - array of intergers ranging from 0 to 9. corresponds to 9 classes of c
 etc...
 9 - ankle boot
 
+build model 
 
-
+1.  configure layers (model = ...)
+  a.  basic building block of nn
+  b.  extract representation of data fed in
+  c.  chained together, example - tf.keras.layers.Dense 
+2.  compile model (model.compile)
+  a.  needs a loss function - how accurate model is during training <-- minimize this 
+  b.  optimizer <-- how model updates itself based on data and loss function 
+  c.  metrics - monitor training and testing % correctly classified images
+3.  train model (model.fit)
+  a.  feed in training data 
+  b.  model created
+  c.  test created model against test data (test_images/test_labels) are all correct
+  d.  test_image fed into model = output and check output vs test_label (model.evaluate)
