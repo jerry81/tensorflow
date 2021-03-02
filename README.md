@@ -360,3 +360,9 @@ build model
   b.  model created
   c.  test created model against test data (test_images/test_labels) are all correct
   d.  test_image fed into model = output and check output vs test_label (model.evaluate)
+4.  make prediction - (tf.keras.layers.Softmax())
+  a.  this is an application of the model
+  b.  softmax creates the probability scores from logits
+    i.  short for soft argmax - soft refers to smooth approximation
+    ii.  argmax finds arguments that maximizes value
+  c.  model.predict actually gets the predictions - outputs an array of len matching the number of classes, the values represent the "confidence" that the input is of the class referred to by the index
